@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+enum Role {
+  ADMIN
+  ALUMNI
+}
+enum Course {
+  BTECH_IT
+  BTECH_CSBS
+  BTECH_CSSS
+}
+enum AlumniStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+}
+model User {
+  id          String    @id @default(cuid())
+  name        String?
+  email       String    @unique
+  password    String
+  role        Role      @default(ALUMNI)
+  graduation  Int?
+  company     String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  alumni      Alumni?
+}
+model Alumni {
+  id               String        @id @default(cuid())
+  userId           String        @unique
+  user             User          @relation(fields: [userId], references: [id])
+  photo            String?
+  fullName         String
+  enrollmentNumber String        @unique
+  batch            String
+  course           Course
+  phone            String?
+  email            String        @unique
+  company          String?
+  position         String?
+  skills           String[]      @default([])
+  linkedinUrl      String?
+  status           AlumniStatus  @default(PENDING)
+  isProfileComplete Boolean      @default(false)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([batch])
+  @@index([course])
+  @@index([company])
+  @@index([position])
+  @@index([enrollmentNumber])
+  @@index([email])
+}
