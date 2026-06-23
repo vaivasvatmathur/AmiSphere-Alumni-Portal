@@ -40,3 +40,11 @@ app.use(notFound);
 app.use(errorHandler);
 
 export default app;
+
+app.get("/", (req, res) => {
+  res.json({
+    status: "success",
+    app: "AmiSphere Backend",
+    message: "Backend running successfully"
+  });
+});
