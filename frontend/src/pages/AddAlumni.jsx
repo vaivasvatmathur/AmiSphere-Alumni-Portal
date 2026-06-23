@@ -132,7 +132,7 @@ const AddAlumni = () => {
             required
           />
           <FormField label="Batch" name="batch" value={form.batch} onChange={updateField} required placeholder="2024" />
-          <FormField label="Course" required>
+          <FormField label="Programme" required>
             <select
               name="course"
               value={form.course}

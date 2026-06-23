@@ -376,7 +376,7 @@ const MyProfile = () => {
                   <BookOpen size={16} />
                 </span>
                 <div>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Degree Course</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Degree Programme</p>
                   <p className="text-sm font-semibold text-slate-800">{alumni.course || "Not Specified"}</p>
                 </div>
               </div>

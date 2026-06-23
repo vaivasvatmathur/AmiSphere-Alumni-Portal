@@ -672,7 +672,7 @@ const RegisterAlumni = () => {
                     </label>
 
                     <label className="space-y-1.5">
-                      <span className="text-xs font-semibold text-slate-700">Course *</span>
+                      <span className="text-xs font-semibold text-slate-700">Programme *</span>
                       <select 
                         name="course" 
                         required
@@ -682,7 +682,7 @@ const RegisterAlumni = () => {
                           form.course ? "border-emerald-500" : "border-slate-200"
                         }`}
                       >
-                        <option value="">Select Course</option>
+                        <option value="">Select Programme</option>
                         <option value="BTECH_IT">B.Tech IT</option>
                         <option value="BTECH_CSBS">B.Tech CSBS</option>
                         <option value="BTECH_CSSS">B.Tech CSSS</option>

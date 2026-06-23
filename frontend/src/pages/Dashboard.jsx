@@ -132,9 +132,9 @@ const Dashboard = () => {
           icon={Building2}
         />
         <StatCard
-          label="Courses"
+          label="Programmes"
           value={loading ? "..." : stats?.courseBreakdown?.length || 0}
-          detail="Active course groups"
+          detail="Active programme groups"
           icon={GraduationCap}
         />
       </div>

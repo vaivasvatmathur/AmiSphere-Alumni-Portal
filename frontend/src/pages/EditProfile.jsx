@@ -316,7 +316,7 @@ const EditProfile = () => {
               required
             />
             
-            <FormField label="Degree Course" required>
+            <FormField label="Degree Programme" required>
               <select
                 name="course"
                 value={form.course}

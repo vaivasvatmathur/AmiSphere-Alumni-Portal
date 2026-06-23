@@ -117,7 +117,7 @@ const AlumniDetails = () => {
 
       <section className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <DetailItem label="Batch" value={alumni.batch} icon={GraduationCap} />
-        <DetailItem label="Course" value={alumni.course} icon={GraduationCap} />
+        <DetailItem label="Programme" value={alumni.course} icon={GraduationCap} />
         <DetailItem label="Phone" value={alumni.phone} icon={Phone} />
         <DetailItem label="Email" value={alumni.email} icon={Mail} />
         <DetailItem label="Company" value={alumni.company} icon={Building2} />

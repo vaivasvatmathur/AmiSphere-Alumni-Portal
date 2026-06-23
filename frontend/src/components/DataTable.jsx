@@ -14,7 +14,7 @@ const DataTable = ({ alumni, onDelete }) => {
               <th className="px-4 py-3">Name</th>
               <th className="px-4 py-3">Enrollment</th>
               <th className="px-4 py-3">Batch</th>
-              <th className="px-4 py-3">Course</th>
+              <th className="px-4 py-3">Programme</th>
               <th className="px-4 py-3">Company</th>
               <th className="px-4 py-3">Position</th>
               <th className="px-4 py-3">Email</th>

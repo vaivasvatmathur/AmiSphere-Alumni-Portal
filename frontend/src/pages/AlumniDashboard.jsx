@@ -108,7 +108,7 @@ const AlumniDashboard = () => {
     if (alumni.course) {
       score += 10;
     } else {
-      missing.push("Course");
+      missing.push("Programme");
     }
 
     // Status (10%)

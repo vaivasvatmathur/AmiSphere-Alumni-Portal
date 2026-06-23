@@ -95,7 +95,7 @@ const AlumniDirectory = () => {
       "Full Name",
       "Enrollment Number",
       "Batch",
-      "Course",
+      "Programme",
       "Phone",
       "Email",
       "Company",
@@ -129,18 +129,24 @@ const AlumniDirectory = () => {
   return (
     <div>
       <PageHeader
-        title="Alumni Directory"
-        description="Search, filter, update, export, and maintain alumni records."
+        title={isAdmin ? "Alumni Directory" : "Alumni Network"}
+        description={
+          isAdmin
+            ? "Search, filter, update, export, and maintain alumni records."
+            : "Search, filter, and connect with fellow alumni."
+        }
         actions={
           <>
-            <button
-              type="button"
-              onClick={exportCsv}
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-            >
-              <Download size={17} />
-              Export CSV
-            </button>
+            {isAdmin && (
+              <button
+                type="button"
+                onClick={exportCsv}
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+              >
+                <Download size={17} />
+                Export CSV
+              </button>
+            )}
             {isAdmin && (
               <Link
                 to="/admin/alumni/new"

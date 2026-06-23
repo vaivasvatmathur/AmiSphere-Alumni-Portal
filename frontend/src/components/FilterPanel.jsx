@@ -35,13 +35,13 @@ const FilterPanel = ({ filters, options, onChange, onClear }) => {
         </label>
 
         <label className="space-y-1.5">
-          <span className="text-xs font-medium text-slate-500">Course</span>
+          <span className="text-xs font-medium text-slate-500">Programme</span>
           <select
             value={filters.course}
             onChange={(event) => update("course", event.target.value)}
             className="focus-ring w-full rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm"
           >
-            <option value="">All courses</option>
+            <option value="">All programmes</option>
             {(options.courses?.length ? options.courses : ["B.Tech IT", "B.Tech CSBS", "B.Tech CSSS"]).map(
               (course) => (
                 <option key={course} value={course}>
