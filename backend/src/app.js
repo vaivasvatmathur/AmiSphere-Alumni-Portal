@@ -69,14 +69,20 @@ const allowedOrigins = env.clientUrl
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps, postman, or internal server pings)
-      if (!origin || allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-      // Instead of throwing a generic error that causes a 500, log it and deny gracefully
-      console.warn(`CORS Blocked Origin: ${origin}`);
-      return callback(new Error("Not allowed by CORS"), false);
-    },
+  if (!origin) {
+    return callback(null, true);
+  }
+
+  if (
+    allowedOrigins.includes(origin) ||
+    origin.includes("vaivasvatmathurs-projects.vercel.app")
+  ) {
+    return callback(null, true);
+  }
+
+  console.warn(`CORS Blocked Origin: ${origin}`);
+  return callback(new Error("Not allowed by CORS"), false);
+},
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
