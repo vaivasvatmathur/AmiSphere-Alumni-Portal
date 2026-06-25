@@ -62,31 +62,33 @@ const app = express();
 
 // Parse origins safely
 const allowedOrigins = env.clientUrl
-  ? env.clientUrl.split(",").map((origin) => origin.trim())
-  : ["http://localhost:5173"];
+    ? env.clientUrl.split(",").map(origin => origin.trim())
+    : ["http://localhost:5173"];
 
-// 1. Core Middlewares
 app.use(
-  cors({
-    origin: function (origin, callback) {
-  if (!origin) {
-    return callback(null, true);
-  }
+    cors({
+        origin(origin, callback) {
+            // Allow server-to-server or postman requests
+            if (!origin) return callback(null, true);
 
-  if (
-    allowedOrigins.includes(origin) ||
-    origin.includes("vaivasvatmathurs-projects.vercel.app")
-  ) {
-    return callback(null, true);
-  }
+            // Validate against explicit environment variables
+            if (allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
 
-  console.warn(`CORS Blocked Origin: ${origin}`);
-  return callback(new Error("Not allowed by CORS"), false);
-},
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  })
+            // Dynamically validate Vercel Git Branch Preview URLs via RegExp
+            const vercelPreviewRegex = /^https:\/\/ami-sphere-alumni-portal-.*\.vercel\.app$/;
+            if (vercelPreviewRegex.test(origin)) {
+                return callback(null, true);
+            }
+
+            console.warn("CORS Blocked Origin:", origin);
+            return callback(new Error("Not allowed by CORS"), false);
+        },
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"]
+    })
 );
 
 app.use(express.json({ limit: "1mb" }));
