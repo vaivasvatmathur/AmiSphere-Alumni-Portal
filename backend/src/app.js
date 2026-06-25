@@ -60,7 +60,6 @@ import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
 const app = express();
 
-// Parse origins safely
 const allowedOrigins = env.clientUrl
     ? env.clientUrl.split(",").map(origin => origin.trim())
     : ["http://localhost:5173"];
@@ -68,16 +67,15 @@ const allowedOrigins = env.clientUrl
 app.use(
     cors({
         origin(origin, callback) {
-            // Allow server-to-server or postman requests
             if (!origin) return callback(null, true);
 
-            // Validate against explicit environment variables
+            // Check against explicit environment array
             if (allowedOrigins.includes(origin)) {
                 return callback(null, true);
             }
 
-            // Dynamically validate Vercel Git Branch Preview URLs via RegExp
-            const vercelPreviewRegex = /^https:\/\/ami-sphere-alumni-portal-.*\.vercel\.app$/;
+            // Broad-spectrum validation for any Vercel project/branch preview domain
+            const vercelPreviewRegex = /^https:\/\/[a-z0-9-]+\.vercel\.app$/;
             if (vercelPreviewRegex.test(origin)) {
                 return callback(null, true);
             }
