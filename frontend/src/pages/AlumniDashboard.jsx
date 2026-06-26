@@ -41,9 +41,6 @@ const getTimeBasedGreeting = () => {
   if (hour >= 17 && hour < 21) return "Good Evening";
   return "Good Night";
 };
-
-
-
 const AlumniDashboard = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -275,7 +272,7 @@ const AlumniDashboard = () => {
           
           <div className="space-y-3">
             <h1 className="text-2xl sm:text-3xl font-bold text-[#061A32]">
-              {getTimeBasedGreeting()}, {alumni.fullName.split(" ")[0]} 👋. Welcome back!
+              {getTimeBasedGreeting()}, {(alumni?.fullName || "Alumni").split(" ")[0]} 👋. Welcome back!
             </h1>
             {alumni.email && alumni.email.endsWith("@gmail.com") && (
               <div className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200/50 rounded-full px-2.5 py-0.5">
