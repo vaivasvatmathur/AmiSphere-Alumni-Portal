@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer.jsx";
 import Navbar from "../components/Navbar.jsx";
@@ -10,26 +10,26 @@ const DashboardLayout = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [profile, setProfile] = useState(null);
 
-  const fetchProfile = () => {
-    api
-      .get("/auth/me")
-      .then(({ data }) => {
-        setProfile(data.user || null);
-      })
-      .catch(() => {
-        setProfile(null);
-      });
-  };
+  const fetchProfile = useCallback(async () => {
+    try {
+      const { data } = await api.get("/auth/me");
+      setProfile(data.user || null);
+    } catch {
+      setProfile(null);
+    }
+  }, []);
 
   useEffect(() => {
     fetchProfile();
+  }, [fetchProfile]);
 
+  useEffect(() => {
     // Listen for profile update events to refresh the header/sidebar in real-time
     window.addEventListener("profileUpdated", fetchProfile);
     return () => {
       window.removeEventListener("profileUpdated", fetchProfile);
     };
-  }, []);
+  }, [fetchProfile]);
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">

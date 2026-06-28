@@ -32,9 +32,21 @@ const Dashboard = () => {
       ]);
       setStats(statsResponse.data);
       setRecentAlumni(alumniResponse.data.items);
-    } finally {
-      setLoading(false);
-    }
+    } catch(err){
+
+console.error(err);
+setStats({
+total:0,
+batchCount:0,
+companyCount:0,
+courseBreakdown:[]
+});
+setRecentAlumni([]);
+}
+finally{
+setLoading(false);
+
+}
   }, []);
 
   useEffect(() => {
