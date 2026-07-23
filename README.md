@@ -2,39 +2,7 @@
 
 AmiSphere is a complete internal admin portal for the Department of Information Technology, ASET, Amity University, Noida to maintain alumni records. Alumni do not log in, sign up, chat, or access the system. The portal is intentionally focused on department administration: CRUD records, filtering, search, bulk upload, and export.
 
-## Folder Structure
-
-```text
-Alumni/
-  backend/
-    src/
-      config/
-      controllers/
-      middleware/
-      models/
-      routes/
-      services/
-      utils/
-    uploads/
-    .env.example
-    package.json
-  frontend/
-    src/
-      api/
-      components/
-      context/
-      layouts/
-      pages/
-      routes/
-    .env.example
-    package.json
-    tailwind.config.js
-    vite.config.js
-  examples/
-    alumni-upload-template.csv
-  README.md
 ```
-
 ## Tech Stack
 
 - Frontend: React, Vite, Tailwind CSS, React Router DOM, Axios
