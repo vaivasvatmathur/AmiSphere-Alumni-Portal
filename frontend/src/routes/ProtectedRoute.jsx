@@ -22,9 +22,11 @@ const ProtectedRoute = ({ allowedRoles } = {}) => {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
-  // Check role-based access
+  // Check role-based access: redirect authenticated users with unauthorized roles
+  // directly to their role's default dashboard instead of /login to prevent loops.
   if (allowedRoles && allowedRoles.length && !allowedRoles.includes(user?.role)) {
-    return <Navigate to="/login" replace state={{ from: location }} />;
+    const fallbackPath = user?.role === "ALUMNI" ? "/alumni/dashboard" : "/dashboard";
+    return <Navigate to={fallbackPath} replace />;
   }
 
   return <Outlet />;

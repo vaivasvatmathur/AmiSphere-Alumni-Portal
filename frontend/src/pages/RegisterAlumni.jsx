@@ -9,7 +9,8 @@ const RegisterAlumni = () => {
   const { login, user } = useAuth();
 
   if (user) {
-    return <Navigate to="/alumni/dashboard" replace />;
+    const fallbackPath = user.role === "ADMIN" ? "/dashboard" : "/alumni/dashboard";
+    return <Navigate to={fallbackPath} replace />;
   }
 
   const [step, setStep] = useState(1);

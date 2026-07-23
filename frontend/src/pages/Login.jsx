@@ -35,6 +35,24 @@ const content = {
   }
 };
 
+const isRouteAllowed = (role, path) => {
+  if (!path || path === "/login" || path === "/") return false;
+  if (role === "ADMIN") {
+    return path.startsWith("/dashboard") || path.startsWith("/admin/");
+  }
+  if (role === "ALUMNI") {
+    return path.startsWith("/alumni/") || path === "/directory";
+  }
+  return false;
+};
+
+const getTargetRoute = (role, fromPath) => {
+  if (fromPath && isRouteAllowed(role, fromPath)) {
+    return fromPath;
+  }
+  return role === "ALUMNI" ? "/alumni/dashboard" : "/dashboard";
+};
+
 const Login = () => {
   const { login, logout, user, isAuthenticated, loading } = useAuth();
   const navigate = useNavigate();
@@ -54,19 +72,11 @@ const Login = () => {
       const storedUser = JSON.parse(localStorage.getItem("user") || "null");
       const role = user?.role || storedUser?.role;
       const fromPath = location.state?.from?.pathname;
+      const target = getTargetRoute(role, fromPath);
 
-      if (fromPath && fromPath !== "/login") {
-        navigate(fromPath, { replace: true });
-        return;
-      }
-
-      if (role === "ALUMNI") {
-        navigate("/alumni/dashboard", { replace: true });
-      } else {
-        navigate("/dashboard", { replace: true });
-      }
+      navigate(target, { replace: true });
     }
-  }, [loading, isAuthenticated, navigate, location.pathname, user]);
+  }, [loading, isAuthenticated, navigate, location, user]);
 
   // Show loading state while auth initializes
   if (loading) {
@@ -104,14 +114,16 @@ const Login = () => {
 
       if (selectedRole === "ADMIN") {
         if (role === "ADMIN") {
-          navigate(location.state?.from?.pathname || "/dashboard", { replace: true });
+          const target = getTargetRoute("ADMIN", location.state?.from?.pathname);
+          navigate(target, { replace: true });
         } else {
           logout();
           setError("Selected login type does not match your account.");
         }
       } else if (selectedRole === "ALUMNI") {
         if (role === "ALUMNI") {
-          navigate("/alumni/dashboard", { replace: true });
+          const target = getTargetRoute("ALUMNI", location.state?.from?.pathname);
+          navigate(target, { replace: true });
         } else {
           logout();
           setError("Selected login type does not match your account.");
