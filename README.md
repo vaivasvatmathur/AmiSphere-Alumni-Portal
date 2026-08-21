@@ -309,15 +309,6 @@ PUT    /api/alumni/:id
 DELETE /api/alumni/:id
 GET    /api/alumni/stats
 ```
-
-### Upload
-
-```text
-POST /api/upload
-```
-
-> API endpoints may vary depending on the current backend implementation.
-
 ---
 
 # ☁️ Deployment
