@@ -1,3 +1,6 @@
+#For Admin login use credentials- User ID:  admin@amity.edu, pwd: Admin123@
+#For Alumni login, use credentials- User ID: harshitsingh@gmail.com, pwd: Harshit@123
+
 # AmiSphere – Alumni Management Portal
 
 A full-stack web-based Alumni Management Portal designed to centralize alumni records, reduce manual administrative work, and enable alumni to independently maintain their professional information.
