@@ -1,5 +1,6 @@
-#For Admin login use credentials- User ID:  admin@amity.edu, pwd: Admin123@
-#For Alumni login, use credentials- User ID: harshitsingh@gmail.com, pwd: Harshit@123
+**For Admin login use credentials-** User ID:  admin@amity.edu, pwd: Admin123@
+
+**For Alumni login, use credentials-** User ID: harshitsingh@gmail.com, pwd: Harshit@123
 
 # AmiSphere – Alumni Management Portal
 
