@@ -1,5 +1,4 @@
 <div align="center">
-
 ## Demo Login Credentials
 
 <table>
