@@ -24,8 +24,6 @@
   </tbody>
 </table>
 
-<p><strong>Security note:</strong> These demo credentials are visible to anyone who can access this repository. Use them only for a disposable demo environment, never reuse them for real accounts, and rotate them if they are active.</p>
-
 </div>
 
 ---
