@@ -1,244 +1,271 @@
-**For Admin login use credentials-** User ID:  admin@amity.edu, pwd: Admin123@
+[README (1).md](https://github.com/user-attachments/files/34146253/README.1.md)<div align="center">
 
-**For Alumni login, use credentials-** User ID: harshitsingh@gmail.com, pwd: Harshit@123
+# 🌐 AmiSphere
+### **Your alumni network. One connected universe.**
 
-# AmiSphere – Alumni Management Portal
+*A full-stack Alumni Management Portal built to keep institutional records organized, alumni profiles up to date, and meaningful connections within reach.*
 
-A full-stack web-based Alumni Management Portal designed to centralize alumni records, reduce manual administrative work, and enable alumni to independently maintain their professional information.
+<p>
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=20232A" alt="React frontend" />
+  <img src="https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js backend" />
+  <img src="https://img.shields.io/badge/Express.js-REST%20API-111111?style=for-the-badge&logo=express&logoColor=white" alt="Express REST API" />
+  <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL database" />
+</p>
+<p>
+  <img src="https://img.shields.io/badge/Prisma-ORM-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma ORM" />
+  <img src="https://img.shields.io/badge/Supabase-Database%20Hosting-3FCF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Vite-Frontend%20Tool-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-Styling-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+</p>
 
-AmiSphere provides separate **Admin and Alumni portals** with role-based access, secure authentication, centralized profile management, alumni directory, dashboard analytics, and bulk data management.
+**AmiSphere turns scattered alumni records into a connected, maintainable campus network.**
+
+</div>
 
 ---
 
-## 📌 Overview
+## 🧭 Navigate the README
 
-Educational institutions often maintain alumni information using spreadsheets, separate databases, or manually updated records. As alumni change their jobs, organizations, skills, locations, and contact information, keeping these records updated becomes increasingly difficult.
+<details open>
+<summary><strong>Explore project sections</strong></summary>
 
-**AmiSphere** addresses this problem by providing a centralized platform where administrators can efficiently manage alumni records while alumni can securely maintain their own professional profiles.
+- [Why AmiSphere?](#-why-amisphere)
+- [Problem Statement](#-problem-statement)
+- [Goals](#-project-goals)
+- [Features](#-features)
+- [System Architecture](#-system-architecture)
+- [Technology Stack](#-technology-stack)
+- [How It Works](#-how-it-works)
+- [Authentication & Security](#-authentication--security)
+- [Database Design Overview](#-database-design-overview)
+- [Project Structure](#-project-structure)
+- [Environment Variables](#-environment-variables)
+- [API Overview](#-api-overview)
+- [Deployment](#-deployment)
+- [Benefits & Impact](#-benefits--impact)
+- [Future Roadmap](#-future-roadmap)
+- [Author & License](#-author--license)
 
-The system follows a **client-server architecture** with a React frontend, Node.js/Express backend, Prisma ORM, and PostgreSQL database.
+</details>
 
 ---
+
+## 🌌 Why AmiSphere?
+
+College creates a network that can last a lifetime—but alumni information often ends up spread across spreadsheets, disconnected databases, and outdated records. AmiSphere brings that information into one structured platform.
+
+It gives administrators the tools to maintain institutional records while allowing alumni to take ownership of their own professional information. The result is a more organized, accessible foundation for long-term alumni engagement.
+
+> **The idea:** less time maintaining records manually, more room for alumni connections to grow.
 
 ## 🎯 Problem Statement
 
-Traditional alumni management approaches face several challenges:
+Traditional alumni management often runs into the same roadblocks:
 
-* Alumni information is scattered across multiple files and platforms.
-* Manual data maintenance is time-consuming.
-* Alumni records become outdated as professional information changes.
-* Searching and filtering large alumni datasets is inefficient.
-* Administrators cannot continuously track every alumnus.
-* Alumni often have no dedicated platform to update their own information.
+- 🗂️ Alumni information is scattered across multiple files and platforms.
+- ⏳ Manual data maintenance takes time and effort.
+- 🔄 Records become outdated as jobs, organizations, skills, locations, and contact details change.
+- 🔎 Searching and filtering large alumni datasets can be inefficient.
+- 👥 Administrators cannot continuously track every alumnus.
+- ✍️ Alumni may not have a dedicated platform to update their own information.
 
-AmiSphere addresses these challenges through **centralized data management combined with alumni self-service**.
+**AmiSphere addresses these challenges through centralized data management and alumni self-service.**
 
----
+## 🚀 Project Goals
 
-## 💡 Key Objectives
-
-* Centralize alumni information in a structured database.
-* Reduce dependency on spreadsheets and manual record maintenance.
-* Allow alumni to independently update their professional profiles.
-* Provide administrators with efficient record management tools.
-* Implement secure authentication and role-based access control.
-* Improve alumni discoverability and networking.
-* Provide a scalable foundation for future alumni engagement features.
+- Centralize alumni information in a structured database.
+- Reduce dependence on spreadsheets and manual record maintenance.
+- Let alumni independently update their professional profiles.
+- Give administrators efficient record-management tools.
+- Implement secure authentication and role-based access control.
+- Improve alumni discoverability and networking.
+- Establish a scalable foundation for future alumni-engagement features.
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
-### 👨‍💼 Admin Portal
+### 🛡️ Admin Portal
 
-* Admin authentication
-* Admin dashboard
-* Alumni statistics and analytics
-* Add new alumni records
-* Edit existing alumni records
-* Delete alumni records
-* Search and filter alumni
-* Alumni directory
-* Bulk alumni upload using CSV/XLSX
-* View detailed alumni profiles
-* Manage centralized alumni information
+| Capability | What it enables |
+|---|---|
+| Admin authentication | Dedicated sign-in for administrators |
+| Admin dashboard | A central place to oversee alumni records |
+| Statistics & analytics | At-a-glance alumni information and metrics |
+| Alumni record management | Add, edit, view, and delete alumni records |
+| Search & filtering | Find records across the alumni dataset |
+| Alumni directory | Browse centrally maintained alumni information |
+| Bulk CSV/XLSX upload | Import multiple alumni records in one workflow |
+| Detailed profiles | View individual alumni information |
+| Centralized management | Maintain institutional alumni information from one place |
 
 ### 🎓 Alumni Portal
 
-* Alumni registration
-* Secure alumni login
-* Personalized alumni dashboard
-* Profile completion tracking
-* View personal profile
-* Edit personal information
-* Update academic information
-* Update employment details
-* Add technical skills
-* Add LinkedIn/professional links
-* Higher studies information
-* Government examination information
-* Alumni directory/network
+| Capability | What it enables |
+|---|---|
+| Registration & secure login | Create an account and access the alumni portal |
+| Personalized dashboard | A personal starting point after login |
+| Profile completion tracking | See progress toward a more complete profile |
+| View & edit profile | Maintain personal information |
+| Academic information | Update educational details |
+| Employment details | Keep current professional information up to date |
+| Technical skills | Add relevant skills |
+| Professional links | Add LinkedIn and other professional links |
+| Higher studies information | Record further-education details |
+| Government examination information | Maintain relevant examination details |
+| Alumni directory/network | Discover other alumni in the network |
 
 ### 🔐 Authentication & Authorization
 
-* JWT-based authentication
-* Password hashing using bcrypt
-* Role-based access control
-* Protected routes
-* Separate Admin and Alumni permissions
-* Secure API access
+- JWT-based authentication
+- Password hashing with `bcrypt`
+- Role-based access control (RBAC)
+- Protected routes
+- Separate Admin and Alumni permissions
+- Protected API access
 
 ---
 
 ## 🏗️ System Architecture
 
-```text
-                    ┌──────────────────────┐
-                    │      End Users       │
-                    │ Admin / Alumni       │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   React Frontend     │
-                    │ Tailwind CSS + Vite  │
-                    └──────────┬───────────┘
-                               │
-                         REST API / Axios
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ Node.js + Express.js │
-                    │ Authentication/API   │
-                    └──────────┬───────────┘
-                               │
-                          Prisma ORM
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │     PostgreSQL       │
-                    │      Supabase        │
-                    └──────────────────────┘
+AmiSphere uses a client-server architecture. The React client communicates with the Node.js/Express REST API; Prisma provides the database access layer between the backend and PostgreSQL hosted on Supabase.
+
+```mermaid
+flowchart TD
+    U["End Users<br/>Admin / Alumni"] --> FE["React Frontend<br/>Tailwind CSS · Vite"]
+    FE -->|"REST API · Axios"| BE["Node.js + Express.js<br/>Authentication & API"]
+    BE --> ORM["Prisma ORM"]
+    ORM --> DB[("PostgreSQL<br/>Supabase")]
+```
+
+### Architecture at a glance
+
+1. **Frontend:** renders the Admin and Alumni experiences.
+2. **REST API:** carries requests between the frontend and backend.
+3. **Backend:** handles authentication, authorization, and application operations.
+4. **Prisma ORM:** provides the database access layer.
+5. **PostgreSQL on Supabase:** stores structured application data.
+
+---
+
+## 🧰 Technology Stack
+
+<details open>
+<summary><strong>Frontend</strong></summary>
+
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Tailwind CSS
+- React Router DOM
+- Axios
+- React Context API
+- Vite
+
+</details>
+
+<details>
+<summary><strong>Backend</strong></summary>
+
+- Node.js
+- Express.js
+- REST APIs
+- JWT Authentication
+- `bcrypt.js`
+- CORS
+- `dotenv`
+
+</details>
+
+<details>
+<summary><strong>Database</strong></summary>
+
+- PostgreSQL
+- Prisma ORM
+- Supabase
+
+</details>
+
+<details>
+<summary><strong>Development & Deployment</strong></summary>
+
+- Git
+- GitHub
+- Render
+- Netlify / Vercel
+
+</details>
+
+---
+
+## 🔄 How It Works
+
+### Admin workflow
+
+```mermaid
+flowchart TD
+    A["Admin Login"] --> B["JWT Authentication"]
+    B --> C["Admin Dashboard"]
+    C --> D["Manage Alumni"]
+    D --> E["Add · Edit · Delete · Search"]
+    E --> F[("Database")]
+```
+
+### Alumni workflow
+
+```mermaid
+flowchart TD
+    A["Alumni Registration"] --> B["Alumni Login"]
+    B --> C["JWT Authentication"]
+    C --> D["Alumni Dashboard"]
+    D --> E["View / Edit Profile"]
+    E --> F["Professional Information"]
+    F --> G[("Centralized Database")]
 ```
 
 ---
 
-## 🛠️ Technology Stack
+## 🔒 Authentication & Security
 
-### Frontend
+The authentication process follows this sequence:
 
-* React.js
-* JavaScript (ES6+)
-* HTML5
-* CSS3
-* Tailwind CSS
-* React Router DOM
-* Axios
-* React Context API
-* Vite
-
-### Backend
-
-* Node.js
-* Express.js
-* REST APIs
-* JWT Authentication
-* bcrypt.js
-* CORS
-* dotenv
-
-### Database
-
-* PostgreSQL
-* Prisma ORM
-* Supabase
-
-### Development & Deployment
-
-* Git
-* GitHub
-* Render
-* Netlify / Vercel
-
----
-
-## 🔄 Application Workflow
-
-### Admin Workflow
-
-```text
-Admin Login
-     ↓
-JWT Authentication
-     ↓
-Admin Dashboard
-     ↓
-Manage Alumni
-     ↓
-Add / Edit / Delete / Search
-     ↓
-Database
-```
-
-### Alumni Workflow
-
-```text
-Alumni Registration
-        ↓
-Alumni Login
-        ↓
-JWT Authentication
-        ↓
-Alumni Dashboard
-        ↓
-View / Edit Profile
-        ↓
-Professional Information
-        ↓
-Centralized Database
-```
-
----
-
-## 🔐 Authentication Flow
-
-1. User enters email and password.
-2. Frontend sends credentials to the backend through Axios.
+1. The user enters an email address and password.
+2. The frontend sends the credentials to the backend using Axios.
 3. Express.js receives the authentication request.
-4. Backend verifies the user credentials.
-5. Password is validated using bcrypt.
+4. The backend verifies the user's credentials.
+5. The password is validated using `bcrypt`.
 6. A JWT is generated after successful authentication.
-7. JWT and user information are returned to the frontend.
-8. Protected routes use the authentication state and user role.
+7. The token and user information are returned to the frontend.
+8. Protected routes use authentication state and the user's role.
 9. The JWT is attached to subsequent API requests.
-10. Backend validates the token before allowing protected operations.
+10. The backend validates the token before allowing protected operations.
+
+> **Security note:** Never commit `.env` files, passwords, tokens, or database credentials to GitHub. If any real or reusable credentials have already been published, rotate them before sharing the repository.
 
 ---
 
-## 🗄️ Database
+## 🗄️ Database Design Overview
 
-AmiSphere uses **PostgreSQL** as its relational database, hosted through **Supabase**.
+AmiSphere uses **PostgreSQL**, hosted through **Supabase**, as its relational database. **Prisma ORM** acts as the data-access layer between the Node.js backend and PostgreSQL.
 
 The database stores structured information related to:
 
-* User accounts
-* Authentication
-* Alumni profiles
-* Academic information
-* Employment details
-* Skills
-* Professional links
-* Profile information
-
-**Prisma ORM** is used as the database access layer between the Node.js backend and PostgreSQL.
+- User accounts
+- Authentication
+- Alumni profiles
+- Academic information
+- Employment details
+- Skills
+- Professional links
+- Profile information
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```text
 AmiSphere/
-│
 ├── frontend/
 │   ├── src/
 │   │   ├── api/
@@ -251,7 +278,6 @@ AmiSphere/
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │   │   └── index.css
-│   │
 │   ├── public/
 │   ├── package.json
 │   └── vite.config.js
@@ -268,153 +294,135 @@ AmiSphere/
 │
 └── README.md
 ```
+
 ---
 
-## 🔑 Environment Variables
+## ⚙️ Environment Variables
+
+Configure environment variables in the appropriate frontend and backend environment files.
 
 ### Frontend
 
-| Variable       | Description          |
-| -------------- | -------------------- |
+| Variable | Description |
+|---|---|
 | `VITE_API_URL` | Backend API base URL |
 
 ### Backend
 
-| Variable       | Description                           |
-| -------------- | ------------------------------------- |
-| `PORT`         | Port on which the backend runs        |
+| Variable | Description |
+|---|---|
+| `PORT` | Port on which the backend runs |
 | `DATABASE_URL` | PostgreSQL/Supabase connection string |
-| `JWT_SECRET`   | Secret used to sign JWT tokens        |
-| `CLIENT_URL`   | Allowed frontend origin(s)            |
-| `NODE_ENV`     | Application environment               |
+| `JWT_SECRET` | Secret used to sign JWT tokens |
+| `CLIENT_URL` | Allowed frontend origin(s) |
+| `NODE_ENV` | Application environment |
 
-**Never commit `.env` files or database credentials to GitHub.**
+**Important:** Keep environment files out of version control. Set production variables in the hosting provider's environment settings, and use strong, private secrets.
 
 ---
 
-# 📡 API Overview
+## 📡 API Overview
 
 The backend exposes REST APIs for authentication, alumni management, and data uploads.
 
 ### Authentication
 
-```text
-POST /api/auth/login
-GET  /api/auth/me
-```
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `POST` | `/api/auth/login` | Authenticate a user |
+| `GET` | `/api/auth/me` | Retrieve the authenticated user's information |
 
 ### Alumni Management
 
-```text
-GET    /api/alumni
-GET    /api/alumni/:id
-POST   /api/alumni
-PUT    /api/alumni/:id
-DELETE /api/alumni/:id
-GET    /api/alumni/stats
-```
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/api/alumni` | Retrieve alumni records |
+| `GET` | `/api/alumni/:id` | Retrieve a specific alumni record |
+| `POST` | `/api/alumni` | Create an alumni record |
+| `PUT` | `/api/alumni/:id` | Update an alumni record |
+| `DELETE` | `/api/alumni/:id` | Delete an alumni record |
+| `GET` | `/api/alumni/stats` | Retrieve alumni statistics |
+
 ---
 
-# ☁️ Deployment
+## ☁️ Deployment
 
-AmiSphere follows a separated deployment architecture:
+AmiSphere uses a separated deployment architecture:
 
-```text
-React Frontend
-      │
-      │
-      ▼
-Netlify / Vercel
-      │
-      │ REST API
-      ▼
-Node.js + Express Backend
-      │
-      ▼
-Render
-      │
-      ▼
-Prisma
-      │
-      ▼
-PostgreSQL
-      │
-      ▼
-Supabase
+```mermaid
+flowchart LR
+    FE["React Frontend"] --> HOSTFE["Netlify / Vercel"]
+    HOSTFE -->|"REST API requests"| BE["Node.js + Express Backend"]
+    BE --> HOSTBE["Render"]
+    BE --> ORM["Prisma ORM"]
+    ORM --> DB[("PostgreSQL on Supabase")]
 ```
 
-### Frontend
+| Layer | Technology / Platform |
+|---|---|
+| Frontend | Netlify or Vercel |
+| Backend API | Render |
+| Database | Supabase (PostgreSQL) |
+| Database access | Prisma ORM |
 
-The React application can be deployed using:
-
-* Netlify
-* Vercel
-
-### Backend
-
-The Node.js/Express API is deployed using:
-
-* Render
-
-### Database
-
-The PostgreSQL database is hosted using:
-
-* Supabase
+The frontend and backend are deployed separately, with the frontend communicating with the backend through the REST API.
 
 ---
 
-# 📊 Benefits
+## 📈 Benefits & Impact
 
-AmiSphere provides several improvements over traditional spreadsheet-based alumni management:
+- **Centralized data:** Alumni information is maintained in one structured system.
+- **Less manual work:** Administrators can manage records through a dedicated dashboard.
+- **Self-service updates:** Alumni can maintain their own professional information.
+- **Improved accessibility:** Authorized users can access information through a web interface.
+- **Better organization:** Relational storage supports consistent data management and retrieval.
+- **Role-based security:** Admin and Alumni users have separate permissions.
+- **Room to grow:** The architecture can support additional alumni-engagement features over time.
 
-* **Centralized Data** – Alumni information is maintained in one structured system.
-* **Reduced Manual Work** – Administrators can manage records through a dedicated dashboard.
-* **Self-Service Updates** – Alumni can independently maintain their professional information.
-* **Improved Accessibility** – Authorized users can access information through a web interface.
-* **Better Data Organization** – Structured relational storage improves consistency and retrieval.
-* **Role-Based Security** – Admin and Alumni users have separate permissions.
-* **Scalable Architecture** – The application can be extended with additional alumni engagement features.
+## 🔭 Future Roadmap
 
----
+These are potential enhancements, not claims that they are already implemented.
 
-# 🔮 Future Enhancements
-
-Potential future improvements include:
-
-* Alumni-to-alumni messaging
-* Mentorship programs
-* Job and internship opportunities
-* Alumni event management
-* Email and notification system
-* Advanced analytics and reporting
-* Alumni achievements and recognition
-* LinkedIn integration
-* Mobile application
-* AI-powered alumni networking and recommendations
-* University-wide deployment
+- [ ] Alumni-to-alumni messaging
+- [ ] Mentorship programs
+- [ ] Job and internship opportunities
+- [ ] Alumni event management
+- [ ] Email and notification system
+- [ ] Advanced analytics and reporting
+- [ ] Alumni achievements and recognition
+- [ ] LinkedIn integration
+- [ ] Mobile application
+- [ ] AI-powered alumni networking and recommendations
+- [ ] University-wide deployment
 
 ---
 
-# 🎯 Project Impact
+## 💥 Project Impact
 
-AmiSphere transforms traditional alumni record management into a centralized digital platform by combining **administrative control with alumni self-service**.
+AmiSphere moves alumni management beyond spreadsheets by combining **administrative control with alumni self-service**.
 
-Instead of relying entirely on administrators to maintain alumni information, graduates can directly update their professional profiles while administrators retain control over institutional records.
-
-This reduces manual maintenance, improves data freshness, and creates a stronger foundation for long-term alumni engagement.
+Rather than relying entirely on administrators to maintain every record, graduates can update their own professional profiles while administrators retain control over institutional records. This reduces manual maintenance, improves data freshness, and creates a stronger foundation for long-term alumni engagement.
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
-**Vaivasvat Mathur**
-
-B.Tech Information Technology (2024-2028)
+**Vaivasvat Mathur**  
+B.Tech Information Technology (2024–2028)  
 Amity University, Noida
 
 ---
 
 ## 📄 License
 
-This project is developed for academic and educational purposes.
+This project was developed for **academic and educational purposes**.
+
+---
+
+<div align="center">
+
+**Built with purpose — to keep alumni connections alive.** 🌐
+
+<sub>AmiSphere · Alumni Management Portal</sub>
+
+</div>
