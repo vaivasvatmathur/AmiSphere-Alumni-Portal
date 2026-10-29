@@ -54,32 +54,6 @@
 
 ---
 
-##  Navigate the README
-
-<details open>
-<summary><strong>Explore project sections</strong></summary>
-
-- [Why AmiSphere?](#-why-amisphere)
-- [Problem Statement](#-problem-statement)
-- [Goals](#-project-goals)
-- [Features](#-features)
-- [System Architecture](#-system-architecture)
-- [Technology Stack](#-technology-stack)
-- [How It Works](#-how-it-works)
-- [Authentication & Security](#-authentication--security)
-- [Database Design Overview](#-database-design-overview)
-- [Project Structure](#-project-structure)
-- [Environment Variables](#-environment-variables)
-- [API Overview](#-api-overview)
-- [Deployment](#-deployment)
-- [Benefits & Impact](#-benefits--impact)
-- [Future Roadmap](#-future-roadmap)
-- [Author & License](#-author--license)
-
-</details>
-
----
-
 ## Why AmiSphere?
 
 Graduation should not mean losing touch with the people and information connected to your college. In practice, alumni details often end up scattered across spreadsheets, separate databases, and records that no longer reflect where people work or what they do. AmiSphere brings those details into one place.
